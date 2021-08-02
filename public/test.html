@@ -1,0 +1,856 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="og:description" content="CALCULATE YOUR BMSCE SGPA,CGPA, PERCENTAGE AND STORE YOUR DATA.">
+    <meta name="author" content="developed by Karthik.S (UG CSE BMSCE)" />
+    <meta property="og:title" content="SGPA,CGPA, PERCENTAGE CALCULATOR FOR BMSCE STUDENTS" />
+    <meta property="og:url" content="https://bmscesgpacalculator.netlify.app/" />
+    <meta name="description" content="CALCULATE SGPA,CGPA,PERCENTAGE AND STORE DATA OF BMSCE RESULTS QUICKLY HERE!">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js" type="12280d5ac18791d49fa3142d-text/javascript"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>BMSCE SGPA CALCULATOR</title>
+    <link rel="icon" href="/assets/images/title-image.png" type="image/icon type">
+
+    <script>
+        function bootnavbar(el = 'main_navbar', options) {
+            let defaultOption = {
+
+            }
+
+            options = {...defaultOption,
+                ...options
+            }
+
+
+            var isMobile = {
+                Android: function() {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                BlackBerry: function() {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function() {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Opera: function() {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                },
+                Windows: function() {
+                    return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+                },
+                any: function() {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }
+            };
+
+            this.init = function() {
+                var dropdowns = document.getElementById(el).getElementsByClassName("dropdown");
+                console.log(dropdowns);
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var dropdown = dropdowns.item(i);
+                    dropdown.addEventListener("mouseover", function() {
+                        this.classList.add('show');
+                        this.getElementsByClassName("dropdown-menu")[0].classList.add('show');
+                    });
+                    dropdown.addEventListener("mouseout", function() {
+                        this.classList.remove('show');
+                        this.getElementsByClassName("dropdown-menu")[0].classList.remove('show');
+                    });
+                }
+                // document.getElementById(el).getElementsByClassName("dropdown").forEach(dropdown => {
+                //     dropdown.addEventListener("mouseover", function(){
+                //         dropdown.classList.add('show');
+                //         dropdown.getElementsByClassName("dropdown-menu")[0].classList.add('show');
+                //     });
+                //     dropdown.addEventListener("mouseout", function(){
+                //         dropdown.classList.remove('show');
+                //         dropdown.getElementsByClassName("dropdown-menu")[0].classList.remove('show');
+                //     });
+                // });
+            }
+
+            this.init();
+        }
+    </script>
+</head>
+<style>
+    .float {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        bottom: 50px;
+        right: 20px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        width: 1.8em;
+        height: 1.9em;
+    }
+    
+    .my-float {
+        margin-top: 16px;
+        color: #fff;
+    }
+    
+    .marks {
+        display: block;
+        min-width: 252px;
+        background: #d5fc92;
+        border-radius: 4px;
+        padding: 0.4rem 1rem;
+        color: #161b22;
+        font-weight: bold;
+        text-align-last: center;
+        text-align-last: center;
+        -moz-text-align-last: center;
+        font-size: 16px;
+    }
+    
+    .yearpicker {
+        display: block;
+        min-width: 300.1px;
+        background: #d5fc92;
+        border-radius: 4px;
+        margin: 0.2rem;
+        padding: 0.4rem 1rem;
+        color: #161b22;
+        font-weight: bold;
+        text-align-last: center;
+        text-align-last: center;
+        -moz-text-align-last: center;
+        font-size: 16px;
+    }
+</style>
+
+
+
+<body style="margin-bottom: 10rem;">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top sticky-onscroll py-0 " id="main_navbar" style="font-size: 16px;padding-top: 1rem;">
+        <div class="container-fluid ">
+            <a class="navbar-brand py-0" href="homepage.html" style="margin-top: 10px;margin-bottom: 0.5rem;">
+                <img id="navlogo" src="/assets/images/logo.jpg" width="25" height="25" class="d-inline-block align-top" alt="" loading="lazy">
+                <b style="color: white;" id="mybmsce"><b style="margin-top: 5px;"></b> SGPA CALCULATOR</b>
+            </a>
+            <button class="navbar-toggler py-0 btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon py-0"></span>
+            </button>
+            <div class="collapse navbar-collapse py-0" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item  active">
+                        <a class="nav-link " href="/nav-items/homepage.html" id="nav_items"><b>HOME</b>
+                        </a>
+                    </li>
+
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: #84abff;">
+                            <b>SGPA CALCULATOR</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item disabled" style="font-weight: bold;" href="/sgpa/semesters/1st year/sgpa-phy.html" style="color: #84abff;">PHYSICS CYCLE</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/1st year/sgpa-chem.html">CHEMISTRY CYCLE</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/3rd-sem.html">III SEMESTER</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/4th-sem.html">IV SEMESTER</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/5th-sem.html">V SEMESTER</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/6th-sem.html">VI SEMESTER</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/7th-sem.html">VII SEMESTER</a></li>
+                            <li><a class="dropdown-item" style="font-weight: bold;" href="/sgpa/semesters/8th-sem.html">VIII SEMESTER</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b> CGPA CALCULATOR</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-cse.html">CSE BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-ise.html">ISE BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-etc.html">ETC BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-ece.html">ECE BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-eee.html">EEE BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-eie.html">EIE BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-mech.html">MECHANICAL BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-me.html">MEDICAL ELECTRONICS BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-iem.html">IEM BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-chem.html">CHEMICAL BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-civil.html">CIVIL BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-bio.html">BIOTECH BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-aiml.html">AI AND ML BRANCH</a></li>
+                            <li><a class="dropdown-item" href="/cgpa/cgpa-ae.html">AEROSPACE BRANCH</a></li>
+
+
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b>% CALCULATOR</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/nav-items/cgpatoper.html">CHECK % </a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b>MY PROFILE</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/nav-items/User-Profile-Cgpa.html">CGPA DATA</a></li>
+                            <li><a class="dropdown-item" href="/nav-items/User-Profile-Sgpa.html">SGPA DATA</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b>HOW TO USE</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/nav-items/how-to-use.html">OPEN </a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b>1ST YEARS</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/1st-year/homepage1styear.html">OPEN RESOURCES </a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" style="color: white;">
+                            <b>RESULTS</b>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://results.bmsce.in/">OPEN LINK </a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/nav-items/contactme.html" id="nav_items" style="color: white;"><b>CONTACT</b>
+                        </a>
+                    </li>
+                    <li> <button class="btn btn-danger btn-sm" onclick="mainApp.logout();" style="margin-left: 0rem;font-weight: bolder;border: 1px solid white;margin-top: 5px;margin-bottom: 3px;" onclick="location.href='index.html'"><img src="/images/logout.jpg" style="height: 8px; height: 12px;border-radius: 10rem;border: 1px solid white;margin-bottom: 0.2rem;"> <span>LOG OUT</span>
+                        <div id="main_container" style="display:none;">
+                          
+            </div>
+            </button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div id="preloader">
+        <div id="loader-img">
+            <div id="loader" style="border-radius: 10rem;"></div>
+        </div>
+
+    </div>
+
+
+    <div> <img id="bmsce_logo" src="/assets/images/logo.jpg" alt="..." class="rounded-circle mx-auto d-block" style="border-radius: 10rem;"></div>
+
+
+
+    <div class="user-details">
+        <label style="font-size: 20px;"></i><b>NAME : </b></label>
+        <span class="name"></span>
+        <br>
+
+        <br>
+
+        <label style="font-size: 20px;"><b>USN : </b> </label>
+        <span id="usn"></span>
+
+        <br><br>
+        <h5 style="color: #47c6f8;font-weight: bold;font-size: large;">CHECK A DETAILED EXPLAINATION OF SGPA CALCULATION
+            <div class="text-left" style="margin: 1rem;margin-left: -0.05rem;">
+                <button type="button ml-auto" class="btn btn-primary" style="font-weight:bold;border:1.4px solid white;   font-size: 16px;" onclick="window.location.href='/assets/pdfs/sgpa.pdf'"><i class="fa fa-edit"
+                    style="width:max-content;  color: #ffffff;font-size: larger;"> </i> CALCULATION NOTE</button>
+            </div>
+        </h5>
+
+        <p id="h31" style="font-size:18px;color: white;font-weight: bold;text-align: left;">PHYSICS CYCLE</p>
+        <div class="text-left" id="userdetails">
+            <p style="font-size: larger;color: white;"></p><img src="/assets/images/user-logo.png" alt="loading" style="border-radius: 
+                10rem; height: 40px;width: 40px;border: 1px solid #161b22;margin-top: -0.5rem;"> <span style="color:#3ae277;margin-right: 2rem;" id="user1"> USER : </span><span class="name" style="
+                margin-left:-1.5rem;margin-bottom:-2rem;color:#5cd1ff;padding-bottom: -1rem;"></span>
+        </div>
+
+
+        <div class="main-list" id="list_div">
+            <span id="usn"></span>
+            <div> <span id="usn"></span><br>
+
+            </div>
+
+        </div>
+        <hr style="border:1px solid white; margin-right: 1rem;">
+        <div id="main_container" style="display:none;">
+            <button onclick="mainApp.logout();">logout</button>
+        </div>
+
+
+        <h5 style="color: #47c6f8;font-weight: bold;font-size: large;">ENTER YOUR GRADE AND YEAR OF PASSING FIRST AND HIT SAVE TO SAVE DATA.</h5>
+        <div class="text-left" style="background-color: #161b22;z-index: -1;">
+
+            <select id="semester" hidden>
+                        <option value="1" selected>1</option>
+                    </select><br>
+            <label id="m1">
+                    <b>ENGINEERING MATHEMATICS (I.II) :  </label></b>&nbsp;
+            <select id="s1">
+                        
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> ) </pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                       
+                    </select>
+            <input id="sub1" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+
+            <br />
+            <label id="m2">
+                    <b>ENGINEERING PHYSICS : </label></b>&nbsp;
+            <select id="s2">
+                        
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                    </select>
+            <input id="sub2" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+            <br />
+            <label id="m3">
+                    <b>C PROGRAMMING : </label></b>&nbsp;
+            <select id="s3">
+                       
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                    </select>
+            <input id="sub3" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+
+            <br />
+            <label id="m4">
+                    <b>ELEMENTS OF MECHANICAL ENGINEERING : </label></b>&nbsp;
+            <select id="s4">
+                       
+                          
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                    </select>
+            <input id="sub4" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+
+            <br />
+            <label id="m5">
+                    <b>ELEMENTS OF ELECTRONICS ENGINEERING : </label></b>&nbsp;
+            <select id="s5">
+                         
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                    </select>
+            <input id="sub5" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+            <br />
+            <label id="m6">
+                    <b>KANNADA LANGUAGE : </label></b>&nbsp;
+            <select id="s6">
+                        
+                        <option value="90"><pre>    S GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="80"><pre>    A GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="70"><pre>    B GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="60"><pre>    C GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="50"><pre>    D GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="40"><pre>    E GRADE ( <span >&#10004;</span> )</pre></option>
+                        <option value="30"><pre>    F GRADE ( <span >&#10006;</span> )</pre></option>
+                    </select>
+            <input id="sub6" type="text" class="yearpicker" value="" placeholder="YEAR OF PASSING" readonly>
+            <br /><br>
+
+
+        </div>
+
+        <button type="submit" class="btn btn-success" onclick="calc();" id="calculate" disabled="disabled"><i class="fa fa-edit"
+                    style="width:max-content;  color: #ffffff;font-size: larger;"> </i> CALCULATE SGPA</button><br><br>
+        <!-- <button type="submit" class="button1" onclick="calc();">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;<br><br> SGPA: -->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-success" type="button" id="sgpa_css"><i class="fa fa-sign-in"
+                            style="width:max-content;  color: #ffffff;font-size: larger;"> </i> FINAL SGPA </button>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" size="4" maxlength="4" id="result" readonly>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-success" type="button" id="sgpa_css"><i class="fa fa-percent"
+                            style="width:max-content;  color: #ffffff;font-size: larger;"> </i> PERCENTAGE </button>
+            </div>
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" size="4" maxlength="4" id="percent" readonly>
+        </div>
+        <button type="button" class="btn btn-info btn-sm" onclick="savedata1()" id="save_data" disabled><i class="fa fa-floppy-o"
+            style="width:max-content;  color: black;font-size: large;"> </i> SAVE/UPDATE DATA</button>
+        <button type="button" class="btn btn-danger btn-sm disabled" disabled onclick="delete_data()" id="delete_data"><i class="fa fa-trash"
+            style="width:max-content;  color: #ffffff;font-size: large;" > </i> DELETE DATA</button>
+        <button onclick="if (!window.__cfRLUnblockHandlers) return false; myFunction()" class="btn btn-warning btn-sm disabled" disabled id="download"><i class="fa fa-download"
+                style="width:max-content;  color: #161b22;font-size: large;" > </i> DOWNLOAD</button>
+
+    </div>
+</body>
+
+</div>
+
+<div id="wrapper">
+
+    <div id="header">
+    </div>
+    <!-- #header -->
+
+    <div id="content">
+    </div>
+    <!-- #content -->
+
+
+    <div id="footer"><b><i class="fa fa-copyright" aria-hidden="true"></i></b> Copyright
+        <script>
+            document.write(new Date().getFullYear())
+        </script>. All Rights Reserved <br>Created By <a href="/nav-items/contactme.html" style="color: hsl(197, 100%, 55%);font-size: 15px;"><b> Karthik.S</b></a> (UG CSE BMSCE)</p>
+
+    </div>
+    <!-- #footer -->
+
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="whatsapp://send?text=https://bmscesgpacalculator.netlify.app/" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
+<script>
+    var fireBase = fireBase || firebase;
+    var hasInit = false;
+    var firebaseConfig = {
+        apiKey: "AIzaSyCpcjpxkweTw7EasJ9n--ohfTrz629HsXY",
+        authDomain: "bmsce-sgpa-calculator-e2854.firebaseapp.com",
+        projectId: "bmsce-sgpa-calculator-e2854",
+        storageBucket: "bmsce-sgpa-calculator-e2854.appspot.com",
+        messagingSenderId: "1057810286679",
+        appId: "1:1057810286679:web:e471bcd883b6e1a750fb12",
+        measurementId: "G-7PH1CRW089"
+
+
+
+    };
+    // Initialize Firebase
+
+    if (!hasInit) {
+        firebase.initializeApp(firebaseConfig);
+        hasInit = true;
+    }
+</script>
+<script>
+    var mainApp = {};
+    (function() {
+        var mainContainer = document.getElementById("main_container");
+
+        var logtout = function() {
+            firebase.auth().signOut().then(function() {
+                console.log('success');
+                window.location.replace("index.html");
+            }, function() {})
+        }
+
+        var init = function() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.log("stay");
+                    mainContainer.style.display = "";
+                } else {
+                    // No user is signed in.
+                    mainContainer.style.display = "none";
+                    console.log("redirect");
+                    window.location.replace("index.html");
+                }
+            });
+        }
+
+        init();
+
+        mainApp.logout = logtout;
+    })();
+</script>
+<script>
+    let name = localStorage.getItem("name-key");
+    let usn = localStorage.getItem("usn-key");
+    document.getElementById("usn").innerHTML = usn;
+    for (let i = 0; i < document.getElementsByClassName("name").length; i++) {
+        document.getElementsByClassName("name")[i].innerHTML = name
+    }
+</script>
+
+
+<script>
+    var db = firebase.firestore();
+
+    function savedata1() {
+
+
+        var usn = document.getElementById("usn").innerHTML;
+        var header = document.getElementById("h31").innerText;
+        var sub1 = document.getElementById("s1");
+        var m11 = sub1.options[sub1.selectedIndex].text;
+        console.log(m11);
+        var sub2 = document.getElementById("s2");
+        var m22 = sub2.options[sub2.selectedIndex].text;
+        console.log(m22);
+        var sub3 = document.getElementById("s3");
+        var m33 = sub3.options[sub3.selectedIndex].text;
+        console.log(m33);
+        var sub4 = document.getElementById("s4");
+        var m44 = sub4.options[sub4.selectedIndex].text;
+        console.log(m44);
+        var sub5 = document.getElementById("s5");
+        var m55 = sub5.options[sub5.selectedIndex].text;
+        console.log(m55);
+        var sub6 = document.getElementById("s6");
+        var m66 = sub6.options[sub6.selectedIndex].text;
+        console.log(m66);
+        var sgpa = document.getElementById("result").value;
+        var Percentage = document.getElementById("percent").value;
+
+
+
+        var m1 = document.getElementById("m1").innerText;
+        var m2 = document.getElementById("m2").innerText;
+        var m3 = document.getElementById("m3").innerText;
+        var m4 = document.getElementById("m4").innerText;
+        var m5 = document.getElementById("m5").innerText;
+        var m6 = document.getElementById("m6").innerText;
+
+        var sub1 = document.getElementById("sub1").value;
+        var sub2 = document.getElementById("sub2").value;
+        var sub3 = document.getElementById("sub3").value;
+        var sub4 = document.getElementById("sub4").value;
+        var sub5 = document.getElementById("sub5").value;
+        var sub6 = document.getElementById("sub6").value;
+
+
+
+        db.collection("USERS").doc(usn).collection("SEMESTERS").doc("1ST_SEM").collection("PHYSICS_CYCLE").doc("MARKS").set({
+
+            header: header,
+            usn: usn,
+            m1: m1,
+            m2: m2,
+            m3: m3,
+            m4: m4,
+            m5: m5,
+            m6: m6,
+
+
+            m11: m11,
+            m22: m22,
+            m33: m33,
+            m44: m44,
+            m55: m55,
+            m66: m66,
+            sub1: sub1,
+            sub2: sub2,
+            sub3: sub3,
+            sub4: sub4,
+            sub5: sub5,
+            sub6: sub6,
+
+            SGPA: sgpa,
+            PERCENTAGE: Percentage
+
+        });
+        document.getElementById("save_data").disabled = true;
+        swal({
+            title: "GREAT!",
+            text: "DATA STORED SUCCESSFULLY.",
+            icon: "success",
+
+        });
+
+
+        setTimeout(function() {
+            window.location.reload(1);
+        }, 1500);
+    }
+</script>
+<script>
+    const list_div = document.getElementById("list_div");
+
+    var usn1 = document.getElementById("usn").innerHTML;
+    console.log(usn1);
+
+
+    db.collection(`USERS/${usn}/SEMESTERS/1ST_SEM/PHYSICS_CYCLE`).where("usn", "==", usn1).
+    onSnapshot(function(querySnapshot) {
+        querySnapshot.docChanges().forEach(function(change) {
+            if (change.type === "added") {
+                list_div.innerHTML += "<div class='list-item'><h5>" + change.doc.data().header + "</h5><br><span>" + change.doc.data().m1 + " </span><br><span>" + "=> " + change.doc.data().m11 + " - <span></span>" + change.doc.data().sub1 + " </span><br><span>" + change.doc.data().m2 + " </span><br><span>" + "=> " + change.doc.data().m22 + " - <span></span>" + change.doc.data().sub2 + " </span><br><span>" + change.doc.data().m3 + " </span><br><span>" + "=> " + change.doc.data().m33 + " - <span></span>" + change.doc.data().sub3 + " </span><br><span>" + change.doc.data().m4 + " </span><br><span>" + "=> " + change.doc.data().m44 + " - <span></span>" + change.doc.data().sub4 + " </span><br><span>" + change.doc.data().m5 + " </span><br><span>" + "=> " + change.doc.data().m55 + " - <span></span>" + change.doc.data().sub5 + " </span><br><span>" + change.doc.data().m6 + " </span><br><span>" + "=> " + change.doc.data().m66 + " - <span></span>" + change.doc.data().sub6 + " </span><br><br><h5>" + "FINAL SGPA : " + change.doc.data().SGPA + " </span><br><br><h5>" + "FINAL PERCENTAGE : " + change.doc.data().PERCENTAGE + "%" + "</h4></div><br><hr>"
+            }
+            document.getElementById('delete_data').classList.remove('disabled');
+            document.getElementById('delete_data').disabled = false;
+            document.getElementById('download').classList.remove('disabled');
+            document.getElementById('download').disabled = false;
+        })
+    });
+</script>
+
+<script>
+    function delete_data() {
+        var txt;
+        var r = swal({
+                title: "ARE YOU SURE?",
+                text: "ONCE DELETED YOU CANNOT RECOVER YOUR DATA!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("DATA DELETED SUCCESSFULLY!", {
+                        icon: "success",
+
+                    });
+                    var delete_doc = db.collection(`USERS/${usn}/SEMESTERS/1ST_SEM/PHYSICS_CYCLE`).where("usn", "==", usn1);
+                    delete_doc.get().then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            doc.ref.delete();
+                        });
+                    });
+                    setTimeout(function() {
+                        window.location.reload(1);
+                    }, 1500);
+                } else {
+                    swal("GREAT! DATA STILL SAFE.");
+                }
+            });
+    }
+</script>
+<script>
+    function calc() {
+
+        var sem = document.getElementById('semester').value;
+
+        function obtaineGradePoint() {
+
+            var percent;
+            var s1 = (document.getElementById('s1').value);
+            var sel = document.getElementById("s1");
+            var text1 = sel.options[sel.selectedIndex].text;
+            console.log(text1);
+            var s2 = (document.getElementById('s2').value);
+            var s3 = (document.getElementById('s3').value);
+            var s4 = (document.getElementById('s4').value);
+            var s5 = (document.getElementById('s5').value);
+            var s6 = (document.getElementById('s6').value);
+
+            if (s1 < 0 || s1 > 100 || s2 < 0 || s2 > 100 || s3 < 0 || s3 > 100 || s4 < 0 || s4 > 100 || s5 < 0 || s5 > 200 || s6 < 0 || s6 > 100) {
+                alert("Enter Valid Marks");
+            } else {
+                if (s1 === '100') {
+                    var a1 = 10;
+                } else if (s1 < 40) {
+                    var a1 = 0;
+                } else if (s1 >= 40 && s1 < 49) {
+                    var a1 = 5;
+                } else {
+                    var a1 = parseInt(s1 / 10) + 1;
+                }
+                if (s2 === '100') {
+                    var a2 = 10;
+                } else if (s2 < 40) {
+                    var a2 = 0;
+                } else if (s2 >= 40 && s2 < 49) {
+                    var a2 = 5
+                } else {
+                    var a2 = parseInt(s2 / 10) + 1;
+                }
+                if (s3 === '100') {
+                    var a3 = 10;
+                } else if (s3 < 40) {
+                    var a3 = 0;
+                } else if (s3 >= 40 && s3 < 49) {
+                    var a3 = 5
+                } else {
+                    var a3 = parseInt(s3 / 10) + 1;
+                }
+                if (s4 === '100') {
+                    var a4 = 10;
+                } else if (s4 < 40) {
+                    var a4 = 0;
+                } else if (s4 >= 40 && s4 < 49) {
+                    var a4 = 5
+                } else {
+                    var a4 = parseInt(s4 / 10) + 1;
+                }
+                if (s5 === '100') {
+                    var a5 = 10;
+                } else if (s5 < 40) {
+                    var a5 = 0;
+                } else if (s5 >= 40 && s5 < 49) {
+                    var a5 = 5
+                } else {
+                    var a5 = parseInt(s5 / 10) + 1;
+                }
+                if (s6 === '100') {
+                    var a6 = 10;
+                } else if (s6 < 40) {
+                    var a6 = 0;
+                } else if (s6 >= 40 && s6 < 49) {
+                    var a6 = 5
+                } else {
+                    var a6 = parseInt(s6 / 10) + 1;
+                }
+                if (sem === '2' || sem === '1') {
+                    var r1 = parseFloat(((a1 + a4 + a3) * 4 + (a2) * 5 + (a5) * 3 + (a6) * 0) / 20.00).toFixed(3);
+                    document.getElementById('result').value = r1
+                    document.getElementById('percent').value = parseFloat((r1 - 0.75) * 10).toFixed(3);
+                }
+
+            }
+        }
+
+        if (sem === '1') {
+            obtaineGradePoint();
+        }
+
+        document.getElementById("save_data").disabled = false;
+        document.getElementById("delete_data").disabled = false;
+        document.getElementById("download").disabled = false;
+
+
+    }
+</script>
+<script>
+    var fields = "#s1, #s2, #s3, #s4,#s5,#s6";
+    var f2 = "#sub1, #sub2, #sub3, #sub4,#sub5,#sub6";
+
+
+    setInterval(() => {
+        var filled = [];
+        $(f2).each(function() {
+            if ($(this).val() != '')
+                filled.push(1);
+            else if ($(this).prop('disabled'))
+                filled.push(1);
+        });
+        if (filled.length == 6)
+            $('#calculate').removeAttr('disabled');
+        else
+            $('#calculate').attr('disabled', 'disabled');
+    }, 1000);
+</script>
+
+<script src="/assets/js/yearpicker.js"></script>
+<script>
+    $('.yearpicker').yearpicker()
+</script>
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState === "complete") {
+            $("#panel_left").addClass("panel_left");
+            $("#panel_right").addClass("panel_right");
+            $("#loader").addClass("loaded-circle");
+            $("#loader-img").addClass("loaded-img");
+            $("#preloader").addClass("loaded-img");
+        }
+    }
+    setInterval(() => {
+        const s_range = [1, 2, 3, 4, 5, 6];
+        for (const x of s_range) {
+            let s_v = document.getElementById(`s${x}`);
+            let s_inp = document.getElementById(`sub${x}`);
+            if (s_v.value == "30") {
+                s_inp.disabled = true;
+            } else {
+                if (s_inp.disabled)
+                    s_inp.disabled = false;
+            }
+        }
+    }, 500);
+</script>
+
+<body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="12280d5ac18791d49fa3142d-text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" type="12280d5ac18791d49fa3142d-text/javascript"></script>
+</footer>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="12280d5ac18791d49fa3142d-|49" defer=""></script>
