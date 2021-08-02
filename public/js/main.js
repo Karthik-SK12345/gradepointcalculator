@@ -84,7 +84,7 @@ const Send_Email = () => {
         <h4>BRANCH : ${branch}</h4>
         <h4>SEMESTER : ${semester}</h4>
         <hr>
-        <h3>&#x1F6C8; Please Do not reply to this Mail Directly If you have any Questions/Feedback to give. Please Post it on our site. <a href="bmsce-gpcalculator.herokuapp.com" style="color: #0088cc;text-decoration: underline;">GP CALCULATOR</a>.</h3>
+        <h3>&#x1F6C8; Please Do not reply to this Mail Directly If you have any Questions/Feedback to give. Please Post it on our site. <a href="https://gradepointcalculator.herokuapp.com/" style="color: #0088cc;text-decoration: underline;">GP CALCULATOR</a>.</h3>
         <h3>&#169; Copyright. All rights Reserved.</h3>
         <hr>
         <h3>Thanks,</h3>
